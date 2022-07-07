@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>LyricBot</title>
+        <title>Robot Reviews : Let the AI Choose</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -24,7 +24,7 @@
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-              <li class="sidebar-brand"><a href={{ url_for('home')}}>LyricBot Project</a></li>
+              <li class="sidebar-brand"><a href={{ url_for('home')}}>Robot Reviews</a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('home')}}>Home </a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('results')}}>Try The Model</a></li>
               <li class="sidebar-nav-item"><a href="https://www.github.com">Our Github</a></li>
@@ -32,13 +32,13 @@
             </ul>
         </nav>
         <!-- Header-->
+      <center>
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1 text-primary">LyricBot</h1>
-                <h2 class="mb-2 text-primary">'Algorithms and Blues' Edition</h2>
-                <h3 class="mb-5 text-light"><em>All your favorite artists. One AI.</em></h3>
+              <h1 class="mb-1 text-primary"><div style="background-color:#060a16;border:0px solid black;width:1225px;height:325px;">Robot Reviews:<br>Let the AI Choose<br>The Steam Reviews Generator</div>
+                
                 <a class="btn btn-primary btn-xl" href={{ url_for('results')}}>Try the Model</a>
-            </div>
+           </em></h3></center> </div>
         </header>
         <!-- The Project. Note: https://thesabbir.github.io/simple-line-icons/ will give you a cheat sheet for the icons available-->
         <section class="content-section bg-primary text-white text-center" id="theproject">
@@ -49,33 +49,64 @@
                 </div>
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-music-tone-alt"></i></span>
-                        <h4><strong>Great Music Taste</strong></h4>
-                        <p class="text-faded mb-0">LyricBot is a custom trained GPT-2 model that learned from over 94000 lyrics from the best rock artists of all time.</p>
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-game-controller"></i></span>
+                        <h4><strong>Gamer Approved!</strong></h4>
+                        <p class="text-faded mb-0">Robot Reviews is a custom trained GPT-2 model that learned from two different Kaggle data sets that have over 6 million steam reviews!</p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-playlist"></i></span>
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-printer"></i></span>
                         <h4><strong>Interactive</strong></h4>
-                        <p class="text-faded mb-0">LyricBot will write lyrics based off of any prompt you provide it.</p>
+                        <p class="text-faded mb-0">Our ai will produce a review of a positive or negative review of a game after the user inputs a title, genre, and rating type. The ai should also be able to produce a review on a made-up game!</p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-clock"></i></span>
                         <h4><strong>Timeline</strong></h4>
-                        <p class="text-faded mb-0">LyricBot was completed by teenagers over the course of three weeks this summer!</p>
+                        <p class="text-faded mb-0">The Review Robot was completed by teenagers over the course of three weeks this summer!</p>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-docs"></i></span>
                         <h4><strong>Extensions</strong></h4>
-                        <p class="text-faded mb-0">Some extensions to this project include deploying it to the web, building a discord bot, or having the algorithms and blues LyricBot interact with new genres!</p>
+                        <p class="text-faded mb-0">We might also have out Robot review bot produce multiple reviews at once, include extra info about the game, and give the user the ability to choose how long the review should be! </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+  <section class="content-section bg-primary text-white text-center" id="theproject">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">Specs + Features</h3>
+                    <h2 class="mb-5">The Project</h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-game-controller"></i></span>
+                        <h4><strong>Gamer Approved!</strong></h4>
+                        <p class="text-faded mb-0">Robot Reviews is a custom trained GPT-2 model that learned from two different Kaggle data sets that have over 6 million steam reviews!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-printer"></i></span>
+                        <h4><strong>Interactive</strong></h4>
+                        <p class="text-faded mb-0">Our ai will produce a review of a positive or negative review of a game after the user inputs a title, genre, and rating type. The ai should also be able to produce a review on a made-up game!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-clock"></i></span>
+                        <h4><strong>Timeline</strong></h4>
+                        <p class="text-faded mb-0">The Review Robot was completed by teenagers over the course of three weeks this summer!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-docs"></i></span>
+                        <h4><strong>Extensions</strong></h4>
+                        <p class="text-faded mb-0">We might also have out Robot review bot produce multiple reviews at once, include extra info about the game, and give the user the ability to choose how long the review should be! </p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Team-->
-        <section class="content-section" id="aboutus">
+        <section class="content-section bg-secondary" id="aboutus">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">About Us</h3>
+                    <h3 class="text-primary mb-0">About Us</h3>
                     <h2 class="mb-5">The Team</h2>
                 </div>
                 <div class="row gx-0">
@@ -83,21 +114,21 @@
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h1">Cameron Jackson</div>
-                                  <div class="h2">Machine Learning Engineer</div>
-                                    <p class="mb-0">An AI enthusiast who loves Natural Language Processing!</p>
+                                    <div class="h1">Pierce Lilly</div>
+                                  <div class="h2">Product Manager (AKA the "no-fun" job)</div>
+                                    <p class="mb-0">sample text</p>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-1.jpg') }}" alt="..." />
+                            <img class="img-fluid" src="{{ url_for('static',filename='img/PierceLilly.jpg') }}" alt="..." />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                   <div class="h1">Alex Duffy</div>
-                                    <div class="h2">Front End Designer</div>
-                                    <p class="mb-0">A WebDev enthusiast who loves Natural Language Processing!</p>
+                                   <div class="h1">Roonal Salcedo</div>
+                                    <div class="h2">sample text</div>
+                                    <p class="mb-0">sample text</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-2.jpg') }}" alt="..." />
@@ -107,9 +138,9 @@
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h1">Michael Ke Zhang</div>
-                                    <div class="h2">Backend Engineer</div>
-                                    <p class="mb-0">A backend enthusiast who loves Natural Language Processing!</p>
+                                    <div class="h1">Nicholas Dai</div>
+                                    <div class="h2">Sample text</div>
+                                    <p class="mb-0">Sample text</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-3.jpg') }}" alt="..." />
@@ -119,9 +150,9 @@
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h1">Richard Hsu</div>
-                                    <div class="h2">Project Lead</div>
-                                    <p class="mb-0">A great leader who loves Natural Language Processing!</p>
+                                    <div class="h1">Keegan Hosch</div>
+                                    <div class="h2">sample text</div>
+                                    <p class="mb-0">sample text</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-4.jpg') }}" alt="..." />
@@ -131,9 +162,9 @@
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h1">Cydnee Harris</div>
-                                    <div class="h2">Quality Control</div>
-                                    <p class="mb-0">A thorough quality controller who loves Natural Language Processing!</p>
+                                    <div class="h1"> Nathan Nipp</div>
+                                    <div class="h2">sample text</div>
+                                    <p class="mb-0">sample text</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-4.jpg') }}" alt="..." />
@@ -143,9 +174,9 @@
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h1">Stella Dong</div>
-                                    <div class="h2">Front End Engineer</div>
-                                    <p class="mb-0">An html enthusiast who loves Natural Language Processing!</p>
+                                    <div class="h1">Ailesh Sadruddin</div>
+                                    <div class="h2">sample text</div>
+                                    <p class="mb-0">sample text</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-1.jpg') }}" alt="..." />

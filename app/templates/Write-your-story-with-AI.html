@@ -24,7 +24,7 @@
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-              <li class="sidebar-brand"><a href={{ url_for('home')}}>LyricBot Project</a></li>
+              <li class="sidebar-brand"><a href={{ url_for('home')}}>Robot Reviews</a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('home')}}>Home </a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('results')}}>Try The Model</a></li>
               <li class="sidebar-nav-item"><a href="https://www.github.com">Our Github</a></li>
@@ -36,8 +36,8 @@
             <div class="container px-4 px-lg-5 text-center">
                 <br>
                 <br>
-                <h1 class="mb-1 text-primary">THE MODEL</h1>
-                <h3 class="mb-5 text-dark"><em>LyricBot 'Algorithms and Blues Edition' awaits you below.</em></h3>
+                <h1 class="mb-1 text-primary">Robot Reviews: Let the AI Choose</h1>
+                <h3 class="mb-5 text-dark"><em>Generate reviews on your most or least favorite steam games!</em></h3>
             </div>
         </header>
         <!-- About-->
@@ -46,10 +46,17 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-5">
                         <h2 class="text-light">Test out our model here!</h2>
-                        <p class="lead mb-5"><strong>Submit a prompt for LyricBot to work with below, and the results will appear on the right!</strong></p>
+                        <p class="text-light"><strong>Customize the review you want, so our Review Robot can make a review based on your prompts! </strong></p>
+                        <div class="dropdown">
+                          <button class="dropbtn">Review Type</button>
+                          <div class="dropdown-content">
+                            <a href="#">Positive Review</a>
+                            <a href="#">Negative Review</a>
+                          </div>
+                         </div>
                         <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
                           <div class="form-group">
-                            <textarea class="form-control-lg" rows="4" cols="50" placeholder="Write your prompt here..." required="" id="text_gen_input" name="prompt"></textarea>
+                            <textarea class="form-control-lg" rows="2" cols="30" placeholder="Write a game title here..." required="" id="text_gen_input" name="prompt"></textarea>
                           </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-light" id="text_gen_button">Generate</button>
