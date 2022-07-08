@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Lyric Bot</title>
+        <title>Robot Reviews</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -32,6 +32,7 @@
             </ul>
         </nav>
         <!-- Header-->
+      <section class= "content-section bg-third"
         <header class="d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <br>
@@ -47,14 +48,16 @@
                     <div class="col-lg-5">
                         <h2 class="text-light">Test out our model here!</h2>
                         <p class="text-light"><strong>Customize the review you want, so our Review Robot can make a review based on your prompts! </strong></p>
-                        <div class="dropdown">
-                          <button class="dropbtn">Review Type</button>
-                          <div class="dropdown-content">
-                            <a href="#">Positive Review</a>
-                            <a href="#">Negative Review</a>
-                          </div>
-                         </div>
-                        <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
+                         <p class="text-light"><strong>Select a Review Type! </strong></p>
+                          <form action="/action_page.php">
+                            <select name="cars" id="cars">
+                               <option value="Positive">Positive</option>
+                               <option value="Negative">Negative</option>
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Submit">
+                          </form>
+                          <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
                           <div class="form-group">
                             <textarea class="form-control-lg" rows="2" cols="30" placeholder="Write a game title here..." required="" id="text_gen_input" name="prompt"></textarea>
                           </div>
@@ -68,7 +71,7 @@
                       <h2 class="text-light">Results:</h2>
                       <ul id="generated_ul">
                       <p>
-                        {{ generated }}
+                        {{ generated|safe }}
                         </p>
                       <!-- generated items will be here. -->
                       </ul>
@@ -90,7 +93,7 @@
                         <a class="social-link rounded-circle text-white" href="https://github.com/minimaxir/aitextgen"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-0">Copyright &copy; LyricBot AI Camp Team (mitch cutts) 2022 </p>
+                <p class="text-muted small mb-0">Copyright &copy; Review Robot - Blurred Futures 2022 </p>
             </div>
         </footer>
         <!-- Scroll to Top Button-->

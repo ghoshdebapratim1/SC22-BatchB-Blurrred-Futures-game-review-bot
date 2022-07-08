@@ -42,7 +42,7 @@
         </header>
         <!-- The Project. Note: https://thesabbir.github.io/simple-line-icons/ will give you a cheat sheet for the icons available-->
         <section class="content-section bg-primary text-white text-center" id="theproject">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-4 px-lg-4">
                 <div class="content-section-heading">
                     <h3 class="text-secondary mb-0">Specs + Features</h3>
                     <h2 class="mb-5">The Project</h2>
@@ -71,37 +71,27 @@
                 </div>
             </div>
         </section>
-  
-  <section class="content-section bg-primary text-white text-center" id="theproject">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0">Specs + Features</h3>
-                    <h2 class="mb-5">The Project</h2>
-                </div>
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-game-controller"></i></span>
-                        <h4><strong>Gamer Approved!</strong></h4>
-                        <p class="text-faded mb-0">Robot Reviews is a custom trained GPT-2 model that learned from two different Kaggle data sets that have over 6 million steam reviews!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-printer"></i></span>
-                        <h4><strong>Interactive</strong></h4>
-                        <p class="text-faded mb-0">Our ai will produce a review of a positive or negative review of a game after the user inputs a title, genre, and rating type. The ai should also be able to produce a review on a made-up game!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-clock"></i></span>
-                        <h4><strong>Timeline</strong></h4>
-                        <p class="text-faded mb-0">The Review Robot was completed by teenagers over the course of three weeks this summer!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-docs"></i></span>
-                        <h4><strong>Extensions</strong></h4>
-                        <p class="text-faded mb-0">We might also have out Robot review bot produce multiple reviews at once, include extra info about the game, and give the user the ability to choose how long the review should be! </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="content-section bg-third text-white text-center" id="theproject">
+    <div class="content-section-heading">
+    <h2 class="mb-5">Our Dataset</h2>
+    </div>
+            <div class="container">
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3 border bg-primary">Because our dataset has over 6 million reviews inside of it we can get reviews that make sense as output. However, this does cause the training time to take longer. But the extra time it takes to wait for the training is worth the result.</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-primary">Our dataset has many different genres of game reviews in it ranging from fps games, mmo games, racing games, multiplayer games, etc. This allows us to get a large variety of results when we generate a review.</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-primary">sample text</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-primary">sample text</div>
+    </div>
+  </div>
+</div>
+  </section>
         <!-- Team-->
         <section class="content-section bg-secondary" id="aboutus">
             <div class="container px-4 px-lg-5">
@@ -115,8 +105,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h1">Pierce Lilly</div>
-                                  <div class="h2">Product Manager (AKA the "no-fun" job)</div>
-                                    <p class="mb-0">sample text</p>
+                                  <div class="h2">Product Manager/Data Scientist</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/PierceLilly.jpg') }}" alt="..." />
@@ -127,8 +116,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                    <div class="h1">Roonal Salcedo</div>
-                                    <div class="h2">sample text</div>
-                                    <p class="mb-0">sample text</p>
+                                    <div class="h2">Machine Learning Engineer</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-2.jpg') }}" alt="..." />
@@ -139,8 +127,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h1">Nicholas Dai</div>
-                                    <div class="h2">Sample text</div>
-                                    <p class="mb-0">Sample text</p>
+                                    <div class="h2">Front end Engineer</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-3.jpg') }}" alt="..." />
@@ -151,8 +138,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h1">Keegan Hosch</div>
-                                    <div class="h2">sample text</div>
-                                    <p class="mb-0">sample text</p>
+                                    <div class="h2">Front end Engineer</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-4.jpg') }}" alt="..." />
@@ -163,8 +149,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h1"> Nathan Nipp</div>
-                                    <div class="h2">sample text</div>
-                                    <p class="mb-0">sample text</p>
+                                    <div class="h2">Back end Engineer</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-4.jpg') }}" alt="..." />
@@ -175,8 +160,7 @@
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h1">Ailesh Sadruddin</div>
-                                    <div class="h2">sample text</div>
-                                    <p class="mb-0">sample text</p>
+                                    <div class="h2">Machine Learning Engineer</div>
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ url_for('static',filename='img/portfolio-1.jpg') }}" alt="..." />
@@ -199,7 +183,7 @@
                         <a class="social-link rounded-circle text-white" href="https://github.com/minimaxir/aitextgen"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-0">Copyright &copy; LyricBot AI Camp Team (mitch cutts) 2022 </p>
+                <p class="text-muted small mb-0">Copyright &copy; Blurred Features AI Camp Team 2022 </p>
             </div>
         </footer>
         <!-- Scroll to Top Button-->

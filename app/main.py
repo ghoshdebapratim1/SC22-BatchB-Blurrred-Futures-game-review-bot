@@ -21,10 +21,9 @@ from utils import get_base_url
 from aitextgen import aitextgen
 
 # load up a model from memory. Note you may not need all of these options.
-# ai = aitextgen(model_folder="model/",
-#                tokenizer_file="model/aitextgen.tokenizer.json", to_gpu=False)
+ai = aitextgen(model_folder="model/", to_gpu=False)
 
-ai = aitextgen(model="distilgpt2", to_gpu=False)
+#ai = aitextgen(model="distilgpt2", to_gpu=False)
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
@@ -80,7 +79,7 @@ def generate_text():
         )
 
     data = {'generated_ls': generated}
-    session['data'] = generated[0]
+    session['data'] = '<font color="#0096FF">'+generated[0]+'</font>'
     return redirect(url_for('results'))
 
 # define additional routes here
