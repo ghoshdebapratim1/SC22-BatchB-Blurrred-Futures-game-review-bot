@@ -19,7 +19,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
     </head>
-    <body id="page-top">
+      <div id='show_bg_2'>something here</div>
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
@@ -48,23 +48,52 @@
                     <div class="col-lg-5">
                         <h2 class="text-light">Test out our model here!</h2>
                         <p class="text-light"><strong>Customize the review you want, so our Review Robot can make a review based on your prompts! </strong></p>
-                         <p class="text-light"><strong>Select a Review Type! </strong></p>
-                          <form action="/action_page.php">
-                            <select name="cars" id="cars">
-                               <option value="Positive">Positive</option>
-                               <option value="Negative">Negative</option>
-                            </select>
-                            <br><br>
-                            <input type="submit" value="Submit">
-                          </form>
+                         
                           <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
+                           
+                            <div class="form-group">
+                            <label for="sentiment" class="text-light">Select a Review Type!!</label>
+                            <select name="sentiment" id="sentiment">
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+
+                            </select>
+                          </div>
+                          <br><br>
+                          
+                             <div class="form-group">
+                            <label for="genre" class="text-light"><strong>Select a Genre! </strong></label>
+                            <select name="genre" id="genre">
+                               <option value="Sports">Sports</option>
+                               <option value="Platform">Platform</option>
+                               <option value="Role-Playing">Role-Playing</option>
+                               <option value="Puzzle">Puzzle</option>
+                               <option value="Strategy">Strategy</option>
+                               <option value="Simulation">Simulation</option>
+                               <option value="Action">Action</option>
+                               <option value="Fighting">Fighting</option>
+                               <option value="Adventure">Adventure</option>
+                               <option value="Shooter">Shooter</option>
+                               <option value="Racing">Racing</option>
+                               <option value="Misc">Misc</option>
+
+                            </select>
+                          </div>
+                          <br><br>
+                            
+                  
+
+                      <br>
+                            
                           <div class="form-group">
                             <textarea class="form-control-lg" rows="2" cols="30" placeholder="Write a game title here..." required="" id="text_gen_input" name="prompt"></textarea>
                           </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-light" id="text_gen_button">Generate</button>
                           </div>
-                        </form>
+                        
+                      
+                      </form>
                         <br>
                     </div>
                     <div class="col-lg-5">

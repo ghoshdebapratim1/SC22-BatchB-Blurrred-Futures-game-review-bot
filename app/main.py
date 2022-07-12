@@ -16,12 +16,13 @@ import os
 
 # import stuff for our web server
 from flask import Flask, request, redirect, url_for, render_template, session
-from utils import get_base_url
+from utils import get_base_url,model_input
 # import stuff for our models
 from aitextgen import aitextgen
 
 # load up a model from memory. Note you may not need all of these options.
-ai = aitextgen(model_folder="model/", to_gpu=False)
+ai_pos = aitextgen(model_folder="pos_model/", to_gpu=False)
+ai_neg = aitextgen(model_folder="neg_model/", to_gpu=False)
 
 #ai = aitextgen(model="distilgpt2", to_gpu=False)
 
@@ -62,24 +63,41 @@ def results():
 
 
 @app.route(f'{base_url}/generate_text/', methods=["POST"])
+
 def generate_text():
     """
     view function that will return json response for generated text. 
     """
-
+    genre = request.form['genre']
+    sentiment = request.form['sentiment']
     prompt = request.form['prompt']
-    if prompt is not None:
-        generated = ai.generate(
+    
+    input=model_input(prompt,genre,sentiment)
+    
+    if sentiment == 'Positive':
+        generated = ai_pos.generate(
             n=1,
             batch_size=3,
-            prompt=str(prompt),
-            max_length=300,
-            temperature=0.9,
-            return_as_list=True
-        )
-
-    data = {'generated_ls': generated}
-    session['data'] = '<font color="#0096FF">'+generated[0]+'</font>'
+            prompt=str(input),
+            max_length=200,
+            temperature=1,
+            return_as_list=True)
+        data = {'generated_ls': generated}
+        session['data'] = '<font color="#0096FF">'+generated[0]+'</font>'
+            
+    else:
+        generated = ai_neg.generate(
+            n=1,
+            batch_size=3,
+            prompt=str(input),
+            max_length=200,
+            temperature=1,
+            return_as_list=True)
+        data = {'generated_ls': generated}
+        session['data'] = '<font color="#ff0000">'+generated[0]+'</font>'
+    
+    
+   
     return redirect(url_for('results'))
 
 # define additional routes here
@@ -95,3 +113,4 @@ if __name__ == '__main__':
 
     print(f'Try to open\n\n    https://{website_url}' + base_url + '\n\n')
     app.run(host='0.0.0.0', port=port, debug=True)
+    

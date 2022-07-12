@@ -34,3 +34,13 @@ def and_syntax(alist):
         return alist
     else:
         return
+    
+    
+    
+def model_input(game_name,game_genre,review_sentiment):
+    
+    
+  output= 'Game Name: '+game_name+'<br> Game Genre: '+game_genre+'<br> Review Sentiment: '+review_sentiment+'<br> review: '
+
+    
+  return output 
