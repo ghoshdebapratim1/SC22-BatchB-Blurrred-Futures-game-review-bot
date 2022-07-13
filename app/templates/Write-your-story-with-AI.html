@@ -19,7 +19,6 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
     </head>
-      <div id='show_bg_2'>something here</div>
         <!-- Navigation-->
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
@@ -52,14 +51,14 @@
                           <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
                            
                             <div class="form-group">
-                            <label for="sentiment" class="text-light">Select a Review Type!!</label>
+                            <label for="sentiment" class="text-light"><strong>Select a Review Type!!</strong></label>
                             <select name="sentiment" id="sentiment">
                                 <option value="Positive">Positive</option>
                                 <option value="Negative">Negative</option>
 
                             </select>
                           </div>
-                          <br><br>
+                          <br>
                           
                              <div class="form-group">
                             <label for="genre" class="text-light"><strong>Select a Genre! </strong></label>
@@ -79,6 +78,21 @@
 
                             </select>
                           </div>
+                          <br>
+                            <div>
+                              <div class="form-group">
+                               <label for="temp" class="text-light"><strong>Choose the degree of craziness!</strong></label>
+                                <input type="range" min="0" max="1" value="0.5" step="0.01" id="temp" name="temp" oninput="this.nextElementSibling.value = this.value">
+                                <output class = "text-light">.5</output>
+                      
+                              </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="length" class="text-light"><strong>Choose the length of text!</strong></label>
+                                <input type="range" min="100" max="250" value="150" id="length" name="length" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">150</output>
+                            </div>
                           <br><br>
                             
                   
@@ -96,11 +110,11 @@
                       </form>
                         <br>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-6">
                       <h2 class="text-light">Results:</h2>
                       <ul id="generated_ul">
                       <p>
-                        {{ generated|safe }}
+                       {{ generated|safe }}
                         </p>
                       <!-- generated items will be here. -->
                       </ul>

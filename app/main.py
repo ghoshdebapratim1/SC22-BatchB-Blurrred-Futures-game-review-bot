@@ -16,7 +16,7 @@ import os
 
 # import stuff for our web server
 from flask import Flask, request, redirect, url_for, render_template, session
-from utils import get_base_url,model_input
+from utils import get_base_url,model_input,text_list
 # import stuff for our models
 from aitextgen import aitextgen
 
@@ -71,34 +71,36 @@ def generate_text():
     genre = request.form['genre']
     sentiment = request.form['sentiment']
     prompt = request.form['prompt']
-    
-    input=model_input(prompt,genre,sentiment)
+    length=int(request.form['length'])
+    temp= round(float(request.form['temp']),1)
+
+    input=model_input(prompt,genre,temp,length,sentiment)
     
     if sentiment == 'Positive':
         generated = ai_pos.generate(
-            n=1,
-            batch_size=3,
-            prompt=str(input),
-            max_length=200,
-            temperature=1,
-            return_as_list=True)
+             n=2,
+             batch_size=3,
+             prompt=str(input),
+             max_length=length,
+             temperature=temp,
+             return_as_list=True)
         data = {'generated_ls': generated}
-        session['data'] = '<font color="#0096FF">'+generated[0]+'</font>'
-            
+        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated)+'</div>'+'</font>'
+        #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
+        return redirect(url_for('results'))
+
     else:
         generated = ai_neg.generate(
-            n=1,
+            n=2,
             batch_size=3,
             prompt=str(input),
-            max_length=200,
-            temperature=1,
+            max_length=length,
+            temperature=temp,
             return_as_list=True)
         data = {'generated_ls': generated}
-        session['data'] = '<font color="#ff0000">'+generated[0]+'</font>'
-    
-    
-   
-    return redirect(url_for('results'))
+        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated)+'</div>'+'</font>'
+        #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
+        return redirect(url_for('results'))
 
 # define additional routes here
 # for example:

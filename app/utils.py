@@ -37,10 +37,33 @@ def and_syntax(alist):
     
     
     
-def model_input(game_name,game_genre,review_sentiment):
+def model_input(game_name,game_genre,game_temperature,game_length,review_sentiment):
     
-    
-  output= 'Game Name: '+game_name+'<br> Game Genre: '+game_genre+'<br> Review Sentiment: '+review_sentiment+'<br> review: '
+    game_temperature = str(game_temperature)
+    game_length = str(game_length)
+    output= 'Game Name: '+game_name+'<br> Game Genre: '+game_genre+'<br> Review Sentiment: '+review_sentiment+ '<br> Temperature(Craziness): ' +game_temperature+ '<br> Review Length: '+game_length+'<br> Review: '
 
     
-  return output 
+    return output 
+
+
+def print_list(listname):
+    sep="<br>--------------------<br>"
+    new_list=[]
+    for element in listname:
+        new_list.append(element+sep)
+        
+    return ' '.join(new_list)
+        
+    
+def text_list(review_list):
+    new_list=[]
+    for review in review_list:
+        new_list.append('<div id="review"> <br> <div id="headers"> First box </div>' + review + '<br> </div>')
+        
+        return ' '.join(new_list)
+
+
+
+
+
