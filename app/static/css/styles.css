@@ -611,7 +611,8 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: auto%;
+  border-radius: 75%;
 }
 
 .img-thumbnail {
@@ -4078,7 +4079,7 @@ textarea.form-control-lg {
   padding-bottom: 0.5rem;
 }
 .navbar > .container,
-.navbar > .container-fluid,
+.navbar > .container-F,
 .navbar > .container-sm,
 .navbar > .container-md,
 .navbar > .container-lg,
@@ -11573,7 +11574,6 @@ footer.footer .social-link:hover {
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -11587,6 +11587,8 @@ footer.footer .social-link:hover {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
+.portfolio-item .caption .caption-content h1, .portfolio-item .caption .caption-content .h1 {
+  font-size: 1.8rem;}
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
   font-size: 1.2rem;
@@ -11615,15 +11617,6 @@ footer.footer .social-link:hover {
     transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
     -webkit-clip-path: inset(-1px);
             clip-path: inset(-1px);
-  }
-  .portfolio-item:hover img {
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
-  }
-  .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
   }
 }
 

@@ -26,7 +26,7 @@
               <li class="sidebar-brand"><a href={{ url_for('home')}}>Robot Reviews</a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('home')}}>Home </a></li>
               <li class="sidebar-nav-item"><a href={{ url_for('results')}}>Try The Model</a></li>
-              <li class="sidebar-nav-item"><a href="https://www.github.com">Our Github</a></li>
+              <li class="sidebar-nav-item"><a href="https://github.com/ghoshdebapratim1/game-review-bot">Our Github</a></li>
               <li class="sidebar-nav-item"><a href="https://www.ai-camp.org">AI Camp</a></li>
             </ul>
         </nav>
@@ -90,15 +90,33 @@
                             <br>
                             <div class="form-group">
                                 <label for="length" class="text-light"><strong>Choose the length of text!</strong></label>
-                                <input type="range" min="100" max="250" value="150" id="length" name="length" oninput="this.nextElementSibling.value = this.value">
-                              <output class = "text-light">150</output>
+                                <input type="range" min="200" max="450" value="300" id="length" name="length" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">300</output>
                             </div>
                             
                             <br>
                             <div class="form-group">
                                 <label for="review_number" class="text-light"><strong>Choose number of reviews!</strong></label>
-                                <input type="range" min="1" max="5" value="1" step="1" id="review_number" name="review_number" oninput="this.nextElementSibling.value = this.value">
+                                <input type="range" min="1" max="3" value="1" step="1" id="review_number" name="review_number" oninput="this.nextElementSibling.value = this.value">
                               <output class = "text-light">1</output>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="global_sales" class="text-light"><strong>Choose how many global sales your game has! (In millions)</strong></label>
+                                <input type="range" min="1" max="200" value="100" step="1" id="global_sales" name="global_sales" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">100</output>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="review_votes" class="text-light"><strong>Choose how many votes your review has!</strong></label>
+                                <input type="range" min="1" max="10" value="5" step="1" id="review_votes" name="review_votes" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">5</output>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="release_year" class="text-light"><strong>Choose what year the game was released!</strong></label>
+                                <input type="range" min="1970" max="2025" value="2022" step="1" id="release_year" name="release_year" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">2020</output>
                             </div>
                       <br>
                           <div class="form-group">
