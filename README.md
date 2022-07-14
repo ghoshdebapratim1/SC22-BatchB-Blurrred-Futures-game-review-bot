@@ -38,6 +38,12 @@ For this project, we trained a GPT\-Neo model, even though it's slow, it can pro
 - Otherwise, feel free to simply follow the cells in order.
 - Note: When you get to model training, which ideally takes about 3 hours, please consistently monitor the Colab tab. Inactivity for too long will stop the runtime and slow training down.
 
+Screenshots
+
+![Home Page](https://github.com/ghoshdebapratim1/game-review-bot/blob/bb896430f27e4568d642a602a5b72c2730bc6b84/app/static/img/Screenshot%202022-07-14%202.14.56%20PM.png)
+
+![Model Page](https://github.com/ghoshdebapratim1/game-review-bot/blob/bb896430f27e4568d642a602a5b72c2730bc6b84/app/static/img/Screenshot%202022-07-14%202.15.16%20PM.png)
+
 ### <span style='font-family:georgia'>The Team</span>
 
 <span style='font-family:georgia'>Pierce Lilly - Project Manager and Data Scientist </span>
