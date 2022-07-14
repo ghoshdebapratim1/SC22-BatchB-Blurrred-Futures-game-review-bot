@@ -1,6 +1,6 @@
 # <span style='font-family:georgia'>"Robot Reviews: Let the AI Choose": a Project by Blurred\-Futures</span>
 
-<span style='font-family:georgia'>Welcome, here at Blurred\-Futures, we created an AI system that can generate positive or negative reviews of a video game provided by the user, even if it doesn't exist! It has additional features such as adjustable review length, temperature \(how creative the AI should be\), and TTS capabilities. </span>
+<span style='font-family:georgia'>Welcome, here at Blurred\-Futures, we created an AI system that can generate positive or negative reviews of a video game provided by the user, even if it doesn't exist! It has additional features such as adjustable review length, temperature \(how creative the AI should be\), and the amount of reviews. </span>
 
 <span style='font-family:georgia'>If you have any questions, feel free to open an issue on </span>[<span style='font-family:georgia'>Github</span>](https://github.com/organization-x/omni/issues)<span style='font-family:georgia'>.</span>
 
@@ -20,7 +20,7 @@ For this project, we trained a GPT\-Neo model, even though it's slow, it can pro
 
 ## <span style='font-family:georgia'>Challenges</span>
 
-<span style='font-family:georgia'>This project was never easy at any point. Before usingyea f the data, we had to make sure it was accurate and cleaned out beforehand. Deleting specific words, HTML's, emails, and fine\-tuning would take time and patience. Another somewhat small problem was the lack of RAM at some point, making the system crash and stop working entirely. </span>
+<span style='font-family:georgia'>This project was never easy at any point. Before using the data for training, we had to make sure it was accurate and cleaned out beforehand. Deleting specific words, HTML's, emails, and fine\-tuning would take time and patience. Another somewhat small problem was the lack of RAM at some point, making the system crash and stop working entirely. </span>
 
 <span style='font-family:georgia'>If you want to recreate this project, please be sure to train the model and thoroughly preprocessed data. It helps to use the .sample\(\) function to shorten our key dataset, which has over 6 million indexes. Values in the hundreds of thousands should do pretty well. Also, you'll want to save the data / model as changes happen frequently in case anything happens.</span>
 
@@ -29,7 +29,14 @@ For this project, we trained a GPT\-Neo model, even though it's slow, it can pro
 <span style='font-family:georgia'>The files/directories which you will need to edit are </span><span style='font-family:georgia'>**bolded**</span><span style='font-family:georgia'>, and the files you </span><span style='font-family:georgia'>**may**</span><span style='font-family:georgia'> need to edit are </span><span style='font-family:georgia'>_italicized_</span><span style='font-family:georgia'>.</span>
 
 - <span style='font-family:georgia'>Kaggle Dataset: </span>[<span style='font-family:georgia'>https://www.kaggle.com/datasets/andrewmvd/steam\-reviews6</span>](https://www.kaggle.com/datasets/andrewmvd/steam-reviews)
-- 
+- Google Colab Notebook: https://colab.research.google.com/drive/1L9Zfc50kTDwnfQQBauduAeteHq7qGC-X#scrollTo=i5uWbdFGBQql
+- Python (Flask)
+- aitextgen
+- HTML
+- CSS
+- Any cell that includes the term "gdown" is for copying a path, which will require you to go to the file folder on the left, open the respective folder that the data or model is in, copy the path, and paste there.
+- Otherwise, feel free to simply follow the cells in order.
+- Note: When you get to model training, which ideally takes about 3 hours, please consistently monitor the Colab tab. Inactivity for too long will stop the runtime and slow training down.
 
 ### <span style='font-family:georgia'>The Team</span>
 
@@ -47,5 +54,6 @@ For this project, we trained a GPT\-Neo model, even though it's slow, it can pro
 
 <span style='font-family:georgia'>Deb Ghosh \- Mentor</span>
 
-<span style='font-family:georgia'>We all worked hard to accomplish our goal, for hours we put in our all to reach our desired end goal. Everyone on the team was more than pleased with the final outcome.</span>
+<span style='font-family:georgia'>We all worked hard 
+  to accomplish our goal, for hours we put in our all to reach our desired end goal. Everyone on the team was more than pleased with the final outcome.</span>
 
