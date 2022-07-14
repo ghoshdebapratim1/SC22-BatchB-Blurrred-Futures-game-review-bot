@@ -1,115 +1,51 @@
-# NLP Project Scaffold!
-A scaffold for deploying dockerized flask applications.
+# <span style='font-family:georgia'>"Robot Reviews: Let the AI Choose": a Project by Blurred\-Futures</span>
 
-If you have any questions, feel free to open an issue on [Github](https://github.com/organization-x/omni/issues).
+<span style='font-family:georgia'>Welcome, here at Blurred\-Futures, we created an AI system that can generate positive or negative reviews of a video game provided by the user, even if it doesn't exist! It has additional features such as adjustable review length, temperature \(how creative the AI should be\), and TTS capabilities. </span>
 
-### Video Guide
-[![Deploy a Web Project with Flask](https://img.youtube.com/vi/JUb-PpejA7w/0.jpg)](https://youtu.be/JUb-PpejA7w "Deploy a Web Project with Flask")
+<span style='font-family:georgia'>If you have any questions, feel free to open an issue on </span>[<span style='font-family:georgia'>Github</span>](https://github.com/organization-x/omni/issues)<span style='font-family:georgia'>.</span>
 
-This guide covers how you can quickly deploy most projects with the [Flask](https://flask.palletsprojects.com/) framework and our omni scaffold.
+### <span style='font-family:georgia'>Background</span>
 
-### Quickstart Guide for Local Development
+<span style='font-family:georgia'>We went with this project idea because it related to something everyone in our group had an interest in, which we thought would make the project more enjoyable. It also serves a practical use. When compared to the greater consumer pool of video games, people who write reviews are surprisingly few. The game industry could be improved by review sharing becoming more convenient to the public, thus allowing more reasonable feedback from people beyond those who love, hate, or are intrigued enough about the game to draft a review.</span>
 
-cd into the `/app` folder
+<span style='font-family:georgia'>This guide covers how you can quickly deploy most projects with the </span>[<span style='font-family:georgia'>Flask</span>](https://flask.palletsprojects.com/)<span style='font-family:georgia'> framework and our omni scaffold.</span>
 
-`python3 -m pip install -r requirements.txt`
+### <span style='font-family:georgia'>Datasets</span>
 
-You'll want to edit line 96 of the `main.py` file to either the URL of the cocalc server you are on or `localhost` if you are running it on your own PC.
+<span style='font-family:georgia'>We ended up using 2 different datasets from Kaggle. They included: game name, review text, about 6.2 million publicly known reviews we acquired, and of course, this includes negative and positive reviews. In addition, we used a dataset of game sales in order to add genre specification.  </span>
 
-From there, run `python3 -m main` to start the server on local, most changes while developing will be picked up in realtime by the server. Note that upon cloning this repository an example project with an untrained model will show up upon running `python3 -m main`.
+### <span style='font-family:georgia'>Model</span>
 
+For this project, we trained a GPT\-Neo model, even though it's slow, it can produce the best results. GPT Neo was chosen over alternatives like GPT-2 for this reason. It is a Transformer (A type of deep learning) model with over 2 billion parameters. We trained multiple times and it was long and tedious work, training would take up to 5 hours at some points. 
 
-### Quickstart Guide for Local Deployment
+## <span style='font-family:georgia'>Challenges</span>
 
-Make sure docker is installed on your system. Look that up if you don't know what that means.
+<span style='font-family:georgia'>This project was never easy at any point. Before usingyea f the data, we had to make sure it was accurate and cleaned out beforehand. Deleting specific words, HTML's, emails, and fine\-tuning would take time and patience. Another somewhat small problem was the lack of RAM at some point, making the system crash and stop working entirely. </span>
 
-cd into the root directory of the repo then run 
+<span style='font-family:georgia'>If you want to recreate this project, please be sure to train the model and thoroughly preprocessed data. It helps to use the .sample\(\) function to shorten our key dataset, which has over 6 million indexes. Values in the hundreds of thousands should do pretty well. Also, you'll want to save the data / model as changes happen frequently in case anything happens.</span>
 
-`docker build -t omni .`
+### <span style='font-family:georgia'>Recourses Needed</span>
 
-once built, run
+<span style='font-family:georgia'>The files/directories which you will need to edit are </span><span style='font-family:georgia'>**bolded**</span><span style='font-family:georgia'>, and the files you </span><span style='font-family:georgia'>**may**</span><span style='font-family:georgia'> need to edit are </span><span style='font-family:georgia'>_italicized_</span><span style='font-family:georgia'>.</span>
 
-`docker run -d -p 9000:80 --restart=unless-stopped --name omni omni`
+- <span style='font-family:georgia'>Kaggle Dataset: </span>[<span style='font-family:georgia'>https://www.kaggle.com/datasets/andrewmvd/steam\-reviews6</span>](https://www.kaggle.com/datasets/andrewmvd/steam-reviews)
+- 
 
-you should then be able to see the `omni` container running when you run 
+### <span style='font-family:georgia'>The Team</span>
 
-`docker ps -a`
+<span style='font-family:georgia'>Pierce Lilly - Project Manager and Data Scientist </span>
 
-if it seems to be stuck (i.e. constantly listed as `Restarting`), something is wrong with the docker image or code inside causing it to repeatedly fail.
+<span style='font-family:georgia'>Nicholas Dai - Frontend Engineer</span>
 
-you can start debugging the project by running 
+<span style='font-family:georgia'>Ailesh Sadruddin - Machine Learning Engineer</span>
 
-`docker logs -f omni` 
+<span style='font-family:georgia'>Roonal Salcedo - Machine Learning Engineer</span>
 
-or
+<span style='font-family:georgia'>Keegan Hosch - Frontend Engineer</span>
 
-`docker exec -it omni /bin/bash` for an interactive bash terminal (this option only works if the container is running and not stuck in a restart loop)
+<span style='font-family:georgia'>Nathan Nipp  \- Backend Engineer</span>
 
-### Common Issues
+<span style='font-family:georgia'>Deb Ghosh \- Mentor</span>
 
-`$'\r': command not found` when attempting to start docker container
+<span style='font-family:georgia'>We all worked hard to accomplish our goal, for hours we put in our all to reach our desired end goal. Everyone on the team was more than pleased with the final outcome.</span>
 
-this is caused by the the `entrypoint.sh` script somehow having CLRF line endings instead of LF line endings.
-
-to fix this run
-
-`sed -i 's/\r$//' entrypoint.sh`
-
-### File Structure
-The files/directories which you will need to edit are **bolded**, and the files you **may** need to edit are *italicized*.
-
-**DO NOT TOUCH OTHER FILES. THIS MAY RESULT IN YOUR PROJECT BEING UNABLE TO RUN**
-
-- .gitignore
-- config.py
-- Dockerfile
-- READMD.md
-- entrypoint.sh
-- nginx_host
-- host_config
-- app/
-     - **main.py**
-     - *requirements.txt*
-     - **utils.py**
-     - templates/
-          - **writer_home.html**
-          - **Write-your-story-with-AI.html**
-     - static/
-          - **img/** 
-          - **js/**
-          - **css/**
-          - favicon.ico  
-     - model/
-          - **TODO.txt** <- delete this file after following the directions. Important to note that you will only need an aitextgen.tokenizer.json file if you are custom training your own tokenizer and model.
-
-### main.py ###
-Contains the main flask app itself. Currently the model in use is an untuned GPT-NEO model. You are going to want to comment out the snippet `ai = aitextgen(model_folder="model/", tokenizer_file="model/aitextgen.tokenizer.json", to_gpu=False)` to load in your model once you have put the appropriate files in the `model/` folder. If you do not have a tokenizer file, delete the second argument of the function. 
-
-### requirements.txt ###
-Contains list of packages and modules required to run the flask app. Edit only if you are using additional packages that need to be pip installed in order to run the project.
-
-To generate a requirements.txt file you can run
-
-`pip list --format=freeze > app/requirements.txt`
-
-the requirements.txt file will then be updated. Keep in mind: some packages you install on one operating system may not be available on another. You will have to debug and resolve this yourself if this is the case.
-
-### utils.py ###
-Contains common functions used by the flask app. Put things here that are used more than once in the flask app.
-
-### templates/ ###
-Contains the HTML pages used for the webpage. Edit these to fit your project. The pages `writer_home.html` and `Write-your-story-with-AI.html` are from the example project and should be referenced when building your bootstrap site!
-
-### static/ ###
-Contains the static images, CSS, & JS files used by the flask app for the webpage. You will need to put your css and js files in it. Place all your images used for your website in static/img/ so that you can then reference them in your html files.
-
-### model/ ###
-Contains all necessary information to load in your model to aitextgen. Place your config.json, pytorch_model.bin, and aitextgen.tokenizer.json(if applicable) files in this folder. You are going to want to comment out the snippet `ai = aitextgen(model_folder="model/", tokenizer_file="model/aitextgen.tokenizer.json", to_gpu=False)` in main once you have done this.
-
-### Files used for deployment ###
-`config.py`
-`Dockerfile`
-`entrypoint.sh`
-`nginx_host`
-`host_config`
-**Only modify `host_config`. Do not touch the other files.**

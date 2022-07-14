@@ -10,13 +10,12 @@
     3. What other features you'd like to develop to help AI write better with a user? 
     4. How to speed up the model run? Quantize the model? Using a GPU to run the model? 
 """
-
 # import basics
 import os
 
 # import stuff for our web server
 from flask import Flask, request, redirect, url_for, render_template, session
-from utils import get_base_url,model_input,text_list
+from utils import get_base_url,model_input,text_list,print_list
 # import stuff for our models
 from aitextgen import aitextgen
 
@@ -71,34 +70,40 @@ def generate_text():
     genre = request.form['genre']
     sentiment = request.form['sentiment']
     prompt = request.form['prompt']
-    length=int(request.form['length'])
-    temp= round(float(request.form['temp']),1)
-
-    input=model_input(prompt,genre,temp,length,sentiment)
+    length = int(request.form['length'])
+    temp = round(float(request.form['temp']),1)
+    review_number = int(request.form['review_number'] )
+    
+    input=model_input(prompt,genre,sentiment)
     
     if sentiment == 'Positive':
         generated = ai_pos.generate(
-             n=2,
+             n=review_number,
              batch_size=3,
              prompt=str(input),
              max_length=length,
+             repitition_penalty=1.5,
+             top_p=1,
              temperature=temp,
              return_as_list=True)
         data = {'generated_ls': generated}
+        #session['data'] = '<font color="#0096FF">'+ print_list(generated)
         session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated)+'</div>'+'</font>'
         #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
         return redirect(url_for('results'))
 
     else:
         generated = ai_neg.generate(
-            n=2,
+            n=review_number,
             batch_size=3,
             prompt=str(input),
             max_length=length,
+            repitition_penalty=1.5,
+            top_p=1,
             temperature=temp,
             return_as_list=True)
         data = {'generated_ls': generated}
-        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated)+'</div>'+'</font>'
+        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper"><br>' + text_list(generated)+'<br></div>'+'</font>'
         #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
         return redirect(url_for('results'))
 

@@ -82,7 +82,7 @@
                             <div>
                               <div class="form-group">
                                <label for="temp" class="text-light"><strong>Choose the degree of craziness!</strong></label>
-                                <input type="range" min="0" max="1" value="0.5" step="0.01" id="temp" name="temp" oninput="this.nextElementSibling.value = this.value">
+                                <input type="range" min="0.01" max="1" value="0.5" step="0.01" id="temp" name="temp" oninput="this.nextElementSibling.value = this.value">
                                 <output class = "text-light">.5</output>
                       
                               </div>
@@ -93,22 +93,21 @@
                                 <input type="range" min="100" max="250" value="150" id="length" name="length" oninput="this.nextElementSibling.value = this.value">
                               <output class = "text-light">150</output>
                             </div>
-                          <br><br>
                             
-                  
-
+                            <br>
+                            <div class="form-group">
+                                <label for="review_number" class="text-light"><strong>Choose number of reviews!</strong></label>
+                                <input type="range" min="1" max="5" value="1" step="1" id="review_number" name="review_number" oninput="this.nextElementSibling.value = this.value">
+                              <output class = "text-light">1</output>
+                            </div>
                       <br>
-                            
                           <div class="form-group">
                             <textarea class="form-control-lg" rows="2" cols="30" placeholder="Write a game title here..." required="" id="text_gen_input" name="prompt"></textarea>
                           </div>
                           <div class="form-group">
                             <button type="submit" class="btn btn-light" id="text_gen_button">Generate</button>
                           </div>
-                        
-                      
                       </form>
-                        <br>
                     </div>
                     <div class="col-lg-6">
                       <h2 class="text-light">Results:</h2>

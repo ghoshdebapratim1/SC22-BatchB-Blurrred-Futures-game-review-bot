@@ -1,7 +1,7 @@
 import json
 import os
-
-def get_base_url(port:int) -> str:
+from random_username.generate import generate_username
+def get_base_url(port:int) -> str:    
     '''
     Returns the base URL to the webserver if available.
     
@@ -37,11 +37,10 @@ def and_syntax(alist):
     
     
     
-def model_input(game_name,game_genre,game_temperature,game_length,review_sentiment):
+def model_input(game_name,game_genre,review_sentiment):
     
-    game_temperature = str(game_temperature)
-    game_length = str(game_length)
-    output= 'Game Name: '+game_name+'<br> Game Genre: '+game_genre+'<br> Review Sentiment: '+review_sentiment+ '<br> Temperature(Craziness): ' +game_temperature+ '<br> Review Length: '+game_length+'<br> Review: '
+
+    output= '<br>Game Name: '+game_name+'<br> Game Genre: '+game_genre+'<br> Review Sentiment: '+review_sentiment+'<br> Review: '
 
     
     return output 
@@ -58,10 +57,15 @@ def print_list(listname):
     
 def text_list(review_list):
     new_list=[]
+    box1='<div id="review"> <br> <div id="headers">'
+    box2='</div>'
+    box3='<br> </div>'
+    
     for review in review_list:
-        new_list.append('<div id="review"> <br> <div id="headers"> First box </div>' + review + '<br> </div>')
-        
-        return ' '.join(new_list)
+        rand_name = generate_username(1)
+        rand_name[0]
+        new_list.append(box1+ rand_name[0]+"'s review:" + box2 + review + box3)
+    return ' '.join(new_list)
 
 
 
