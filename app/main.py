@@ -20,8 +20,8 @@ from utils import get_base_url,model_input,text_list,print_list
 from aitextgen import aitextgen
 
 # load up a model from memory. Note you may not need all of these options.
-ai_pos = aitextgen(model_folder="pos_model/", to_gpu=False)
-ai_neg = aitextgen(model_folder="neg_model/", to_gpu=False)
+ai_pos = aitextgen(model_folder="new_pos_model/", to_gpu=False)
+ai_neg = aitextgen(model_folder="new_neg_model/", to_gpu=False)
 
 #ai = aitextgen(model="distilgpt2", to_gpu=False)
 
@@ -73,6 +73,9 @@ def generate_text():
     length = int(request.form['length'])
     temp = round(float(request.form['temp']),1)
     review_number = int(request.form['review_number'] )
+    release_year = int(request.form['release_year'])
+    global_sales = int(request.form['global_sales'])
+    review_votes = int(request.form['review_votes'])
     
     input=model_input(prompt,genre,sentiment)
     
@@ -88,7 +91,7 @@ def generate_text():
              return_as_list=True)
         data = {'generated_ls': generated}
         #session['data'] = '<font color="#0096FF">'+ print_list(generated)
-        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated)+'</div>'+'</font>'
+        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper">' + text_list(generated,release_year,global_sales,review_votes)+'</div>'+'</font>'
         #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
         return redirect(url_for('results'))
 
@@ -103,7 +106,7 @@ def generate_text():
             temperature=temp,
             return_as_list=True)
         data = {'generated_ls': generated}
-        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper"><br>' + text_list(generated)+'<br></div>'+'</font>'
+        session['data'] = '<font color="#0096FF">'+'<div class="grid-wrapper"><br>' + text_list(generated,release_year,global_sales,review_votes)+'<br></div>'+'</font>'
         #session['data'] = '<font color="#0096FF">'+str(length)+'</font>'
         return redirect(url_for('results'))
 

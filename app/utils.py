@@ -55,7 +55,7 @@ def print_list(listname):
     return ' '.join(new_list)
         
     
-def text_list(review_list):
+def text_list(review_list,release_year,global_sales,review_votes):
     new_list=[]
     box1='<div id="review"> <br> <div id="headers">'
     box2='</div>'
@@ -64,7 +64,7 @@ def text_list(review_list):
     for review in review_list:
         rand_name = generate_username(1)
         rand_name[0]
-        new_list.append(box1+ rand_name[0]+"'s review:" + box2 + review + box3)
+        new_list.append(box1+ rand_name[0]+"'s review:" + box2 +'<br>'+'Year of Release: ' +str(release_year) +'<br>'+'Global sales(millions): '+ str(global_sales) +'<br>'+'Review Votes: '+ str(review_votes) + review + box3)
     return ' '.join(new_list)
 
 
