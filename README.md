@@ -38,6 +38,16 @@ For this project, we trained a GPT\-Neo model, even though it's slow, it can pro
 - Otherwise, feel free to simply follow the cells in order.
 - Note: When you get to model training, which ideally takes about 3 hours, please consistently monitor the Colab tab. Inactivity for too long will stop the runtime and slow training down.
 
+
+## <span style='font-family:georgia'>Links for Models</span>
+
+You also need to download both models we trained: one outputs positive reviews, the other outputs negative ones.
+
+Negative: https://drive.google.com/drive/folders/1yikfCo0KmmYsLfybCsMAeVxO0rYcoXpH?usp=sharing
+
+Positive : https://drive.google.com/drive/folders/1pj5qoWX_R0qRDqV4OIZqtmgUfUIiafIT?usp=sharing
+
+
 Screenshots
 
 ![Home Page](https://github.com/ghoshdebapratim1/game-review-bot/blob/bb896430f27e4568d642a602a5b72c2730bc6b84/app/static/img/Screenshot%202022-07-14%202.14.56%20PM.png)
